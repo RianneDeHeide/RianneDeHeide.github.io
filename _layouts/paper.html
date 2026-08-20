@@ -17,7 +17,7 @@ layout: default
 <h2>Related popular writing and media</h2>
 <ul class="publication-list related-writing-list">
 {% for related in page.related %}
-<li><p><b><a href="{% if related.internal %}{{ related.url | relative_url }}{% else %}{{ related.url }}{% endif %}"{% unless related.internal %} target="_blank" rel="noopener"{% endunless %}>{{ related.title }}</a></b>{% if related.source %}<br/>{{ related.source }}{% endif %}{% if related.note %}<br/>{{ related.note }}{% endif %}</p></li>
+<li><p><b><a href="{% if related.internal %}{{ related.url | relative_url }}{% else %}{{ related.url }}{% endif %}"{% unless related.internal %} target="_blank" rel="noopener"{% endunless %}>{{ related.title }}</a></b>{% if related.backup_url %} &nbsp; <a href="{{ related.backup_url | relative_url }}" target="_blank" rel="noopener">{{ related.backup_label | default: "PDF copy" }}</a>{% endif %}{% if related.source %}<br/>{{ related.source }}{% endif %}{% if related.note %}<br/>{{ related.note }}{% endif %}</p></li>
 {% endfor %}
 </ul>
 {% endif %}

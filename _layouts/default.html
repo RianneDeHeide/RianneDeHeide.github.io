@@ -10,14 +10,73 @@
   {% if page.publication_date %}<meta name="citation_publication_date" content="{{ page.publication_date | escape }}">{% endif %}
   {% if page.pdf_url %}<meta name="citation_pdf_url" content="{{ page.pdf_url | absolute_url }}">{% endif %}
 {% endif %}
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=20260820e">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=20260820h">
 </head>
 <body>
+  <a class="skip-link" href="#layout-content">Skip to main content</a>
   <div class="site-shell">
     {% include navigation.html %}
-    <main id="layout-content">
+    <main id="layout-content" tabindex="-1">
       {{ content }}
     </main>
   </div>
+<script>
+(function () {
+  var hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+  document.querySelectorAll('#layout-menu .menu-group').forEach(function (group) {
+    var button = group.querySelector('.submenu-toggle');
+    var submenu = group.querySelector('.submenu');
+    if (!button || !submenu) return;
+    var dismissLock = false;
+
+    function setOpen(open) {
+      submenu.hidden = !open;
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      group.classList.toggle('submenu-open', open);
+    }
+    function openMenu() {
+      if (!dismissLock) setOpen(true);
+    }
+    function closeMenu() {
+      setOpen(false);
+    }
+
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      dismissLock = false;
+      setOpen(submenu.hidden);
+    });
+
+    group.addEventListener('mouseenter', function () {
+      if (hoverQuery.matches) {
+        dismissLock = false;
+        openMenu();
+      }
+    });
+    group.addEventListener('mouseleave', function () {
+      dismissLock = false;
+      closeMenu();
+    });
+    group.addEventListener('focusin', function (event) {
+      if (event.target.matches('a') && !event.target.closest('.submenu')) openMenu();
+    });
+    group.addEventListener('focusout', function (event) {
+      if (!group.contains(event.relatedTarget)) {
+        dismissLock = false;
+        closeMenu();
+      }
+    });
+    group.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !submenu.hidden) {
+        event.preventDefault();
+        dismissLock = true;
+        closeMenu();
+        if (submenu.contains(document.activeElement)) button.focus();
+      }
+    });
+  });
+}());
+</script>
 </body>
 </html>

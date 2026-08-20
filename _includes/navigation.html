@@ -9,6 +9,8 @@
 {% if page.nav == 'teaching' %}{% assign teaching_section = true %}{% endif %}
 {% assign about_section = false %}
 {% if page.nav == 'about' %}{% assign about_section = true %}{% endif %}
+{% assign news_section = false %}
+{% if page.nav == 'news' or current_url == '/activities.html' or current_url == '/eday.html' %}{% assign news_section = true %}{% endif %}
 
 <aside id="layout-menu">
   <div class="menu-category site-name">Rianne de Heide</div>
@@ -16,29 +18,29 @@
     <div class="menu-item parent"><a {% if page.nav == 'home' %}class="current" aria-current="page"{% endif %} href="{{ '/index.html' | relative_url }}">Home</a></div>
 
     <div class="menu-group{% if research_section %} open-section{% endif %}">
-      <div class="menu-item parent has-submenu"><a {% if current_url == '/research.html' %}class="current" aria-current="page"{% elsif research_section %}class="section-current"{% endif %} href="{{ '/research.html' | relative_url }}">Research</a></div>
-      <div class="submenu" aria-label="Research pages">
+      <div class="menu-item parent has-submenu"><a {% if current_url == '/research.html' %}class="current" aria-current="page"{% elsif research_section %}class="section-current"{% endif %} href="{{ '/research.html' | relative_url }}">Research</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-research"><span aria-hidden="true">›</span><span class="visually-hidden">Research submenu</span></button></div>
+      <div class="submenu" id="submenu-research" aria-label="Research pages" hidden>
         <a {% if current_url == '/all-publications.html' %}class="current" aria-current="page"{% endif %} href="{{ '/all-publications.html' | relative_url }}">All publications</a>
       </div>
     </div>
 
     <div class="menu-group{% if notes_section %} open-section{% endif %}">
-      <div class="menu-item parent has-submenu"><a {% if current_url == '/notes.html' %}class="current" aria-current="page"{% elsif notes_section %}class="section-current"{% endif %} href="{{ '/notes.html' | relative_url }}">Notes &amp; Exposition</a></div>
-      <div class="submenu" aria-label="Notes and exposition pages">
+      <div class="menu-item parent has-submenu"><a {% if current_url == '/notes.html' %}class="current" aria-current="page"{% elsif notes_section %}class="section-current"{% endif %} href="{{ '/notes.html' | relative_url }}">Notes &amp; Exposition</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-notes"><span aria-hidden="true">›</span><span class="visually-hidden">Notes and Exposition submenu</span></button></div>
+      <div class="submenu" id="submenu-notes" aria-label="Notes and exposition pages" hidden>
         <a {% if current_url == '/popular-writing.html' %}class="current" aria-current="page"{% endif %} href="{{ '/popular-writing.html' | relative_url }}">Popular science writing</a>
       </div>
     </div>
 
     <div class="menu-group{% if group_section %} open-section{% endif %}">
-      <div class="menu-item parent has-submenu"><a {% if current_url == '/group.html' %}class="current" aria-current="page"{% elsif group_section %}class="section-current"{% endif %} href="{{ '/group.html' | relative_url }}">Group</a></div>
-      <div class="submenu" aria-label="Group pages">
+      <div class="menu-item parent has-submenu"><a {% if current_url == '/group.html' %}class="current" aria-current="page"{% elsif group_section %}class="section-current"{% endif %} href="{{ '/group.html' | relative_url }}">Group</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-group"><span aria-hidden="true">›</span><span class="visually-hidden">Group submenu</span></button></div>
+      <div class="submenu" id="submenu-group" aria-label="Group pages" hidden>
         <a {% if current_url == '/students.html' %}class="current" aria-current="page"{% endif %} href="{{ '/students.html' | relative_url }}">Prospective students</a>
       </div>
     </div>
 
     <div class="menu-group{% if teaching_section %} open-section{% endif %}">
-      <div class="menu-item parent has-submenu"><a {% if current_url == '/teaching.html' %}class="current" aria-current="page"{% elsif teaching_section %}class="section-current"{% endif %} href="{{ '/teaching.html' | relative_url }}">Teaching</a></div>
-      <div class="submenu" aria-label="Teaching pages">
+      <div class="menu-item parent has-submenu"><a {% if current_url == '/teaching.html' %}class="current" aria-current="page"{% elsif teaching_section %}class="section-current"{% endif %} href="{{ '/teaching.html' | relative_url }}">Teaching</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-teaching"><span aria-hidden="true">›</span><span class="visually-hidden">Teaching submenu</span></button></div>
+      <div class="submenu" id="submenu-teaching" aria-label="Teaching pages" hidden>
         <a {% if current_url == '/teaching-material.html' %}class="current" aria-current="page"{% endif %} href="{{ '/teaching-material.html' | relative_url }}">Teaching material</a>
       </div>
     </div>
@@ -46,14 +48,19 @@
     <div class="menu-item parent"><a {% if page.nav == 'young' %}class="current" aria-current="page"{% endif %} href="{{ '/young-academics.html' | relative_url }}">For young academics</a></div>
 
     <div class="menu-group{% if about_section %} open-section{% endif %}">
-      <div class="menu-item parent has-submenu"><a {% if current_url == '/about.html' or current_url == '/activities.html' %}class="current" aria-current="page"{% elsif about_section %}class="section-current"{% endif %} href="{{ '/about.html' | relative_url }}">About</a></div>
-      <div class="submenu" aria-label="About pages">
+      <div class="menu-item parent has-submenu"><a {% if current_url == '/about.html' %}class="current" aria-current="page"{% elsif about_section %}class="section-current"{% endif %} href="{{ '/about.html' | relative_url }}">About</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-about"><span aria-hidden="true">›</span><span class="visually-hidden">About submenu</span></button></div>
+      <div class="submenu" id="submenu-about" aria-label="About pages" hidden>
         <a {% if current_url == '/short-cv.html' %}class="current" aria-current="page"{% endif %} href="{{ '/short-cv.html' | relative_url }}">Short CV</a>
         <a {% if current_url == '/media.html' %}class="current" aria-current="page"{% endif %} href="{{ '/media.html' | relative_url }}">Media &amp; interviews</a>
       </div>
     </div>
 
-    <div class="menu-item parent utility-start"><a {% if current_url == '/news.html' %}class="current" aria-current="page"{% endif %} href="{{ '/news.html' | relative_url }}">News</a></div>
+    <div class="menu-group{% if news_section %} open-section{% endif %}">
+      <div class="menu-item parent has-submenu utility-start"><a {% if current_url == '/news.html' %}class="current" aria-current="page"{% elsif news_section %}class="section-current"{% endif %} href="{{ '/news.html' | relative_url }}">News</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-news"><span aria-hidden="true">›</span><span class="visually-hidden">News submenu</span></button></div>
+      <div class="submenu" id="submenu-news" aria-label="News pages" hidden>
+        <a {% if current_url == '/activities.html' or current_url == '/eday.html' %}class="current"{% endif %} href="{{ '/activities.html' | relative_url }}">Past events &amp; activities</a>
+      </div>
+    </div>
     <div class="menu-item parent"><a {% if current_url == '/mailinglist.html' %}class="current" aria-current="page"{% endif %} href="{{ '/mailinglist.html' | relative_url }}">E-mailing list</a></div>
   </nav>
 </aside>

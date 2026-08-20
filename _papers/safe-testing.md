@@ -16,10 +16,6 @@ related:
     url: "/naw5-2024-25-3-150.pdf"
     internal: true
     note: "An accessible explanation of e-values and what the Safe Testing paper is about."
-  - title: "New mathematical theory about to change the way we do science"
-    source: "Vrije Universiteit Amsterdam, 19 January 2024"
-    url: "https://vu.nl/en/news/2024/new-mathematical-theory-about-to-change-the-way-we-do-science"
-    note: "News article published ahead of the Royal Statistical Society discussion meeting."
   - title: "Verkeerd begrip van statistiek leidt tot foute wetenschap: de p-waarde is dood, leve de e-waarde"
     source: "NRC, 12 February 2024"
     url: "https://www.nrc.nl/nieuws/2024/02/11/verkeerd-begrip-van-statistiek-leidt-tot-foute-wetenschap-de-p-waarde-is-dood-leve-de-e-waarde-a4189494"
@@ -30,7 +26,9 @@ related:
     internal: true
     note: "Interview about p-values and e-values, part of the media coverage around Safe Testing."
   - title: "Betekent de doorbraak van deze wiskundige het einde van de p-waarde?"
-    source: "Ad Valvas, 2024"
+    source: "Ad Valvas, 29 April 2024"
     url: "https://advalvas.vu.nl/wetenschap-onderwijs/betekent-de-doorbraak-van-deze-wiskundige-het-einde-van-de-p-waarde/"
+    backup_url: "/AdvalvasInterviewSafeTesting.pdf"
+    backup_label: "PDF copy"
     note: "Interview about e-values and statistical inference."
 ---

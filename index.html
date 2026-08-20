@@ -7,12 +7,12 @@ nav: "home"
 <h1>Rianne de Heide</h1>
 </div>
 <div id="text-img-container"><div id="img-container">
-<a href="Rianne1.jpg"><img class="home-photo" alt="Rianne" src="{{ '/assets/images/rianne-home.jpg' | relative_url }}"/></a></div>
+<a href="Rianne1.jpg" aria-label="View full-size portrait of Rianne de Heide"><img class="home-photo" alt="Portrait of Rianne de Heide" src="{{ '/assets/images/rianne-home.jpg' | relative_url }}"/></a></div>
 <div id="text-container"><p><i>photo: Annabel Jeuring</i> <br/> <br/></p>
-<p>UT: <a href="https://www.utwente.nl/en/eemcs/damut/" target="_blank">Department of Applied Mathematics</a> <br/>
-Zilverling (building nr. 11), room 2039<br/>
-<a href="https://www.utwente.nl/en/eemcs/" target="_blank">Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS)</a> <br/>
-<a href="https://www.utwente.nl" target="_blank">University of Twente</a> <br/>
+<p>UT: <a href="https://www.utwente.nl/en/eemcs/damut/" target="_blank" rel="noopener">Department of Applied Mathematics</a> <br/>
+Zilverling (building nr. 11), room 2057<br/>
+<a href="https://www.utwente.nl/en/eemcs/" target="_blank" rel="noopener">Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS)</a> <br/>
+<a href="https://www.utwente.nl" target="_blank" rel="noopener">University of Twente</a> <br/>
 Hallenweg 19, 7522 NH Enschede <br/>
 E-mail: r.deheide [at] utwente [dot] nl <br/> <br/></p>
 <p>CWI: office L136 <br/>
@@ -20,40 +20,29 @@ Science Park 123 <br/>
 1098 XG Amsterdam</p>
 </div></div>
 <h2>About me</h2>
-<p>I am an Associate Professor of Mathematical Statistics and Chair of the <a href="https://www.utwente.nl/en/eemcs/stat/" target="_blank">Statistics group (STAT)</a> at the <a href="https://www.utwente.nl" target="_blank">University of Twente</a>, and a Researcher in the <a href="https://www.cwi.nl/en/research/machine-learning/" target="_blank">Machine Learning group</a> at the <a href="https://www.cwi.nl/en/" target="_blank">Centrum Wiskunde &amp; Informatica</a>. <br/></p>
-<p>I work on problems and solutions in machine learning and statistics. My research focuses on hypothesis testing, Bayesian learning and pure exploration problems. Currently I work on my VENI project 'E-values for Multiple Testing’. Central in my work is both bringing a solid mathematical foundation to the topics I work on in different fields, as well as making the theory accessible for less mathematical audiences.  I’m also interested in the mathematical and philosophical foundations of Bayesianism, machine learning, statistics and probability theory.  I hugely enjoy working with my <a href="{{ '/group.html' | relative_url }}" target="_blank">group</a> on a selection of these topics. <br/></p>
-<p>I am a member of the <a href="https://www.utwente.nl/en/young-academy/" target="_blank">Young Academy Twente</a> and the <a href="https://euromathsoc.org/EMYA" target="_blank">EMS Young Academy</a>. I am committed to DEI and want to contribute to academia being a workplace where everyone feels valued and can be themselves. Be welcome to have a chat with me about it. I started an intiative for propagating kindness in academia (<a href="https://www.utoday.nl/news/75198/ut-researcher-starts-initiative-for-kind-academics" target="_blank">news article UToday</a>, <a href="https://sites.google.com/view/kindness-and-excellence" target="_blank">website</a>). <br/></p>
-<p>I am an <a href="https://ellis.eu" target="_blank">ELLIS</a> member. My current work and part of my group is funded by NWO VENI and M2 grants. I am a member of the Round Table Mathematics <a href="https://www.nwo.nl/en/round-table-mathematics" target="_blank">Round Table Mathemnatics</a>, and Associate Editor of <a href="https://academic.oup.com/jrsssb/pages/editorial-board" target="_blank">JRSS-B</a>. <br/></p>
-<p>Outside of work, some easy topics for conversation are: triathlon, hiking, training dogs, raising kids, languages, classical music, and much more!</p>
-<p><a href="activities.html" target="_blank">Find out more</a>.</p>
+<p>I am an Associate Professor of Mathematical Statistics and Chair of the <a href="https://www.utwente.nl/en/eemcs/stat/" target="_blank" rel="noopener">Statistics group (STAT)</a> at the <a href="https://www.utwente.nl" target="_blank" rel="noopener">University of Twente</a>, and a Researcher in the <a href="https://www.cwi.nl/en/research/machine-learning/" target="_blank" rel="noopener">Machine Learning group</a> at the <a href="https://www.cwi.nl/en/" target="_blank" rel="noopener">Centrum Wiskunde &amp; Informatica</a>.</p>
+<p>I work on mathematical statistics and machine learning, especially hypothesis testing with e-values and anytime-valid inference, multiple testing, Bayesian learning and pure exploration. Much of my work is about developing rigorous theory for more flexible ways of learning from data, and making that theory accessible beyond mathematical statistics.</p>
+<p>I also care strongly about academic culture, supervision and creating an environment in which ambitious research and kindness can coexist. <a href="{{ '/about.html' | relative_url }}">More about me</a>.</p>
 <h2>News</h2>
 <ul>
-<li><p>30 August - 2 September: I teach <i>E-values and Multiple Testing</i> at the <a href="https://statistique.cuso.ch/?L=0&id=2688&tx_displaycontroller%5BshowUid%5D=8428" target="_blank">CUSO Summer School 2026</a> in Anzère, Switzerland.</p></li>
-<li><p>6-9 July: I speak at the <a href="https://ims2026.github.io/IMS2026/" target="_blank">IMS Annual Meeting 2026</a> in Salzburg.</p></li>
-<li><p>29 June - 3 July: <a href="https://savi-conference.github.io/2026/" target="_blank">SAVI 2026</a> will take place at the University of Twente! <a href="https://wouterkoolen.info" target="_blank">Wouter Koolen</a> and I are the local organisers.</p></li>
-<li><p>4 June: I speak at the <a href="https://aimath.nl" target="_blank">AI &amp; Mathematics Workshop in Groningen</a>.</p></li>
-<li><p>1 June: I speak at the <a href="https://www.nki.nl" target="_blank">Netherlands Cancer Intstitute</a>.</p></li>
+{% for item in site.data.news limit:5 %}
+  {% assign news_html = item.html | replace: '__BASEURL__', site.baseurl %}
+  <li><p>{{ news_html }}</p></li>
+{% endfor %}
 </ul>
 <p><a href="{{ '/news.html' | relative_url }}">More news</a></p>
 <h2>Research</h2>
 <p>My research interests include </p>
 <ul>
-<li><p>Bandits, Reinforcement Learning</p>
-</li>
-<li><p>Hypothesis testing with e-values, any-time valid testing, multiple testing</p>
-</li>
-<li><p>Group invariance in statistics</p>
-</li>
-<li><p>Bayesian methods</p>
-</li>
-<li><p>Learning theory</p>
-</li>
-<li><p>Imprecise probabilities in statistics</p>
-</li>
-<li><p>Foundations of ML, stats and probability theory</p>
-</li>
+<li><p>Bandits, Reinforcement Learning</p></li>
+<li><p>Hypothesis testing with e-values, any-time valid testing, multiple testing</p></li>
+<li><p>Group invariance in statistics</p></li>
+<li><p>Bayesian methods</p></li>
+<li><p>Learning theory</p></li>
+<li><p>Imprecise probabilities in statistics</p></li>
+<li><p>Foundations of ML, stats and probability theory</p></li>
 </ul>
-<p><a href="research.html" target="_blank">Find out more</a>.</p>
+<p><a href="{{ '/research.html' | relative_url }}">More about my research</a>.</p>
 <h2>Recent papers</h2>
 {% assign dynamic_eclosure = site.data.research_items | where: "id", "item-25" | first %}
 {% assign carefree = site.data.research_items | where: "id", "item-14" | first %}
