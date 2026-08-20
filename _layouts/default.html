@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.title != "Rianne de Heide" %}{{ page.title }} — {% endif %}Rianne de Heide</title>
+{% if page.collection == "notes" %}
+  <meta name="citation_title" content="{{ page.title | escape }}">
+  {% if page.authors %}<meta name="citation_author" content="{{ page.authors | escape }}">{% endif %}
+  {% if page.publication_date %}<meta name="citation_publication_date" content="{{ page.publication_date | escape }}">{% endif %}
+  {% if page.pdf_url %}<meta name="citation_pdf_url" content="{{ page.pdf_url | absolute_url }}">{% endif %}
+{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=20260820b">
+</head>
+<body>
+  <div class="site-shell">
+    {% include navigation.html %}
+    <main id="layout-content">
+      {{ content }}
+    </main>
+  </div>
+</body>
+</html>

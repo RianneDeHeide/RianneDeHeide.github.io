@@ -1,0 +1,19 @@
+title: Rianne de Heide
+description: Academic website of Rianne de Heide
+url: https://riannedeheide.github.io
+baseurl: ''
+markdown: kramdown
+exclude:
+- README.md
+- REDESIGN_NOTES.md
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+defaults:
+- scope:
+    path: ''
+    type: notes
+  values:
+    layout: note
+    nav: notes

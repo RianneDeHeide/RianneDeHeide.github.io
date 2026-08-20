@@ -1,0 +1,15 @@
+---
+layout: default
+title: "Notes & Exposition"
+nav: "notes"
+---
+<h1>Notes &amp; Exposition</h1>
+<p>This section contains technical and expository pieces that sit alongside my research papers. They focus on explaining connections, clarifying conceptual points, or developing useful material that does not fit naturally into a research-paper format.</p>
+<h2>Technical notes and exposition</h2>
+<ul class="note-list">
+{% for note in site.notes %}
+  <li><p><a href="{{ note.url | relative_url }}"><b>{{ note.title }}</b></a>{% if note.status %}<br/><span class="meta">{{ note.status }}</span>{% endif %}</p></li>
+{% endfor %}
+</ul>
+<h2>Popular science writing</h2>
+<p>I also write about statistics and mathematical ideas for broader audiences. See <a href="{{ '/popular-writing.html' | relative_url }}">Popular science writing</a>.</p>

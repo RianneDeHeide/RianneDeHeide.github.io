@@ -1,0 +1,19 @@
+<aside id="layout-menu">
+  <div class="menu-category site-name">Rianne de Heide</div>
+  <nav aria-label="Main navigation">
+    <div class="menu-item"><a {% if page.nav == 'home' %}class="current"{% endif %} href="{{ '/index.html' | relative_url }}">Home</a></div>
+    <div class="menu-item"><a {% if page.nav == 'research' %}class="current"{% endif %} href="{{ '/research.html' | relative_url }}">Research</a></div>
+    <div class="menu-item"><a {% if page.nav == 'notes' %}class="current"{% endif %} href="{{ '/notes.html' | relative_url }}">Notes &amp; Exposition</a></div>
+    <div class="menu-item"><a {% if page.nav == 'group' %}class="current"{% endif %} href="{{ '/group.html' | relative_url }}">Group</a></div>
+    <div class="menu-item"><a {% if page.nav == 'teaching' %}class="current"{% endif %} href="{{ '/teaching.html' | relative_url }}">Teaching</a></div>
+    <div class="menu-item"><a {% if page.nav == 'young' %}class="current"{% endif %} href="{{ '/young-academics.html' | relative_url }}">For young academics</a></div>
+    <div class="menu-item"><a {% if page.nav == 'about' %}class="current"{% endif %} href="{{ '/about.html' | relative_url }}">About</a></div>
+  </nav>
+
+  <div class="menu-category secondary">More</div>
+  <nav aria-label="Additional navigation">
+    <div class="menu-item"><a href="{{ '/students.html' | relative_url }}">Prospective students</a></div>
+    <div class="menu-item"><a href="{{ '/news.html' | relative_url }}">News</a></div>
+    <div class="menu-item"><a href="{{ '/mailinglist.html' | relative_url }}">E-mailing list</a></div>
+  </nav>
+</aside>

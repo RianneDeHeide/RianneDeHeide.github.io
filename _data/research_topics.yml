@@ -1,0 +1,14 @@
+- id: e-values-anytime
+  title: E-values and anytime-valid inference
+- id: multiple-testing
+  title: Multiple testing
+- id: bandits
+  title: Bandits and pure exploration
+- id: bayesian
+  title: Bayesian learning and generalized Bayes
+- id: foundations
+  title: Foundations of statistics, probability and learning
+- id: machine-learning-applications
+  title: Machine learning, clinical trials and applications
+- id: other
+  title: Miscellaneous
