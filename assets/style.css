@@ -102,3 +102,106 @@ img { max-width: 100%; height: auto; }
   margin-top: 0.9em;
   margin-bottom: 0.35em;
 }
+
+/* Research landing pages */
+.paper-citation { margin: 0.25em 0 1em; }
+.paper-citation p > b:first-child { display: none; }
+.paper-citation p > b:first-child + br { display: none; }
+.paper-topics { color: #555; line-height: 1.5; }
+.paper-title-link { color: inherit; }
+.paper-title-link:hover { color: #224b8d; }
+
+
+/* Compact first-level navigation with fly-out submenus */
+#layout-menu { position: relative; overflow: visible; }
+#layout-menu nav { position: relative; }
+#layout-menu .menu-item.parent { padding-left: 16px; text-indent: -16px; }
+#layout-menu .menu-group { position: relative; }
+#layout-menu .menu-item.has-submenu::after {
+  content: "›";
+  color: #999;
+  margin-left: 0.28em;
+  font-size: 0.84em;
+}
+#layout-menu a.section-current { color: #315f9f; }
+#layout-menu .menu-item.utility-start { margin-top: 0.65em; }
+
+#layout-menu .submenu {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  left: calc(100% - 1px);
+  top: -0.35em;
+  min-width: 175px;
+  box-sizing: border-box;
+  padding: 0.28em 0;
+  background: white;
+  border: 1px solid #d8d8d8;
+}
+#layout-menu .menu-group:hover > .submenu,
+#layout-menu .menu-group:focus-within > .submenu {
+  display: block;
+}
+#layout-menu .submenu a {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.20em 0.70em;
+  color: #527bbd;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+#layout-menu .submenu a:hover,
+#layout-menu .submenu a:focus {
+  border-bottom: 0;
+  background: #f6f6f6;
+}
+#layout-menu .submenu a.current {
+  color: #022b6d;
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: #999;
+  text-underline-offset: 0.16em;
+}
+
+/* Short CV: deliberately quiet and compact */
+.short-cv { max-width: 780px; }
+.short-cv-table { border-collapse: collapse; width: 100%; margin: 0; }
+.short-cv-table th, .short-cv-table td { border: 0; text-align: left; vertical-align: top; }
+.short-cv-table th.cv-section {
+  padding: 1.05em 0 0.28em;
+  color: #555;
+  font-size: 0.92em;
+  font-weight: normal;
+  font-style: italic;
+}
+.short-cv-table tr:first-child th.cv-section { padding-top: 0; }
+.short-cv-table td { padding: 0.10em 0; line-height: 1.32; }
+.short-cv-table td.cv-date {
+  width: 7.6em;
+  padding-right: 1em;
+  color: #666;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.about-links { margin-bottom: 1.05em; }
+
+@media (max-width: 760px) {
+  #layout-menu nav { display: block; }
+  #layout-menu .menu-item.parent { padding-left: 0; text-indent: 0; }
+  #layout-menu .menu-item.child { padding-left: 1em; }
+  #layout-menu .menu-item.utility-start { margin-top: 0.55em; }
+}
+@media (max-width: 560px) {
+  .short-cv-table, .short-cv-table tbody, .short-cv-table tr,
+  .short-cv-table td, .short-cv-table th { display: block; width: auto; }
+  .short-cv-table th.cv-section { padding-top: 1em; }
+  .short-cv-table td.cv-date { padding-top: 0.28em; padding-bottom: 0; }
+  .short-cv-table td:not(.cv-date) { padding-bottom: 0.25em; }
+}
+
+/* On narrow screens keep the menu first-level only; child pages remain a second click from their section page. */
+@media (max-width: 760px) {
+  #layout-menu .submenu { display: none !important; }
+  #layout-menu .menu-item.has-submenu::after { content: ""; margin: 0; }
+}

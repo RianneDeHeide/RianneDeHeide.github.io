@@ -15,8 +15,14 @@ nav: "research"
 <ul class="publication-list">
   {% for item in sorted_items %}
     {% if item.topics contains topic.id %}
-      <li>{{ item.html }}</li>
+      <li>{% include research_item.html item=item %}</li>
     {% endif %}
   {% endfor %}
 </ul>
 {% endfor %}
+
+<h2 id="software">Software</h2>
+<ul class="publication-list">
+<li><p><a href="https://CRAN.R-project.org/package=SafeBayes" target="_blank"><b>R package SafeBayes</b></a><br/>
+Rianne de Heide, 2016</p></li>
+</ul>

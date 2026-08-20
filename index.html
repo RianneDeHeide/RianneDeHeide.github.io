@@ -58,6 +58,6 @@ Science Park 123 <br/>
 {% assign dynamic_eclosure = site.data.research_items | where: "id", "item-25" | first %}
 {% assign carefree = site.data.research_items | where: "id", "item-14" | first %}
 <ul class="publication-list">
-<li>{{ dynamic_eclosure.html }}</li>
-<li>{{ carefree.html }}</li>
+<li>{% include research_item.html item=dynamic_eclosure %}</li>
+<li>{% include research_item.html item=carefree %}</li>
 </ul>

@@ -11,7 +11,7 @@ nav: "research"
 <h2>{{ year }}</h2>
 <ul class="publication-list">
 {% for item in sorted_items %}
-  {% if item.year == year %}<li>{{ item.html }}</li>{% endif %}
+  {% if item.year == year %}<li>{% include research_item.html item=item %}</li>{% endif %}
 {% endfor %}
 </ul>
 {% endfor %}

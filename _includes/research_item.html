@@ -1,0 +1,9 @@
+{% assign item = include.item %}
+{% assign plain_title = '<b>' | append: item.title | append: '</b>' %}
+{% assign plain_title_spaced = '<b>' | append: item.title | append: ' </b>' %}
+{% capture linked_title %}<b><a class="paper-title-link" href="{{ item.paper_path | relative_url }}">{{ item.title }}</a></b>{% endcapture %}
+{% assign rendered = item.html | replace_first: plain_title, linked_title %}
+{% if rendered == item.html %}
+  {% assign rendered = item.html | replace_first: plain_title_spaced, linked_title %}
+{% endif %}
+{{ rendered }}
