@@ -1,12 +1,12 @@
 ---
 title: "Where Does the Union Bound Go? Best-Arm Identification and Strong FWER Control"
 authors: "Rianne de Heide"
-status: "Preprint, 20 August 2026"
+status: "arXiv preprint, 20 August 2026"
 publication_date: "2026-08-20"
 pdf_url: "/BAI_unionbound_FWER_note.pdf"
 ---
 
-<p><a href="{{ '/BAI_unionbound_FWER_note.pdf' | relative_url }}"><b>PDF</b></a></p>
+<p><a href="{{ '/BAI_unionbound_FWER_note.pdf' | relative_url }}"><b>PDF</b></a> &nbsp;|&nbsp; <a href="https://arxiv.org/abs/2608.19903" target="_blank" rel="noopener"><b>arXiv</b></a></p>
 
 <h2>What is this note about?</h2>
 <p>In fixed-confidence best-arm identification, proofs often use a union bound over the competing arms. From a multiple-testing viewpoint this can look puzzling: if the best arm is unique, only one hypothesis of the form “arm <i>i</i> is best” can be true. This note explains precisely where the multiplicity correction lives, and how the answer depends on which way the hypotheses are oriented.</p>

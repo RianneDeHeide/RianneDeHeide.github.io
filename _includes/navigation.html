@@ -7,6 +7,8 @@
 {% if page.nav == 'group' or current_url == '/students.html' %}{% assign group_section = true %}{% endif %}
 {% assign teaching_section = false %}
 {% if page.nav == 'teaching' %}{% assign teaching_section = true %}{% endif %}
+{% assign young_section = false %}
+{% if page.nav == 'young' %}{% assign young_section = true %}{% endif %}
 {% assign about_section = false %}
 {% if page.nav == 'about' %}{% assign about_section = true %}{% endif %}
 {% assign news_section = false %}
@@ -45,7 +47,18 @@
       </div>
     </div>
 
-    <div class="menu-item parent"><a {% if page.nav == 'young' %}class="current" aria-current="page"{% endif %} href="{{ '/young-academics.html' | relative_url }}">For young academics</a></div>
+    <div class="menu-group{% if young_section %} open-section{% endif %}">
+      <div class="menu-item parent has-submenu"><a {% if current_url == '/young-academics.html' %}class="current" aria-current="page"{% elsif young_section %}class="section-current"{% endif %} href="{{ '/young-academics.html' | relative_url }}">For young academics</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-young"><span aria-hidden="true">›</span><span class="visually-hidden">For young academics submenu</span></button></div>
+      <div class="submenu" id="submenu-young" aria-label="For young academics pages" hidden>
+        <a {% if current_url == '/phd-netherlands.html' %}class="current" aria-current="page"{% endif %} href="{{ '/phd-netherlands.html' | relative_url }}">Considering a PhD</a>
+        <a {% if current_url == '/during-phd.html' %}class="current" aria-current="page"{% endif %} href="{{ '/during-phd.html' | relative_url }}">During your PhD</a>
+        <a {% if current_url == '/postdocs.html' %}class="current" aria-current="page"{% endif %} href="{{ '/postdocs.html' | relative_url }}">Postdocs</a>
+        <a {% if current_url == '/early-faculty.html' %}class="current" aria-current="page"{% endif %} href="{{ '/early-faculty.html' | relative_url }}">Early faculty</a>
+        <a {% if current_url == '/caregiving-academia.html' %}class="current" aria-current="page"{% endif %} href="{{ '/caregiving-academia.html' | relative_url }}">Parents &amp; caregiving</a>
+        <a {% if current_url == '/dutch-research-community.html' %}class="current" aria-current="page"{% endif %} href="{{ '/dutch-research-community.html' | relative_url }}">Dutch research community</a>
+        <a {% if current_url == '/grants.html' %}class="current" aria-current="page"{% endif %} href="{{ '/grants.html' | relative_url }}">Grants</a>
+      </div>
+    </div>
 
     <div class="menu-group{% if about_section %} open-section{% endif %}">
       <div class="menu-item parent has-submenu"><a {% if current_url == '/about.html' %}class="current" aria-current="page"{% elsif about_section %}class="section-current"{% endif %} href="{{ '/about.html' | relative_url }}">About</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-about"><span aria-hidden="true">›</span><span class="visually-hidden">About submenu</span></button></div>
