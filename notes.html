@@ -6,7 +6,8 @@ nav: "notes"
 <h1>Notes &amp; Exposition</h1>
 <p>Here I collect technical notes, explanations and connections that I find useful but that do not naturally belong in a research paper.</p>
 <ul class="note-list">
-{% for note in site.notes %}
+{% assign sorted_notes = site.notes | sort: 'publication_date' | reverse %}
+{% for note in sorted_notes %}
   <li><p><a href="{{ note.url | relative_url }}"><b>{{ note.title }}</b></a>{% if note.status %}<br/><span class="meta">{{ note.status }}</span>{% endif %}</p></li>
 {% endfor %}
 </ul>
