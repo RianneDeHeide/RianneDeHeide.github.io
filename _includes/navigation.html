@@ -74,6 +74,7 @@
         <a {% if current_url == '/activities.html' or current_url == '/eday.html' %}class="current"{% endif %} href="{{ '/activities.html' | relative_url }}">Past events &amp; activities</a>
       </div>
     </div>
+    <div class="menu-item parent"><a {% if current_url == '/contact.html' %}class="current" aria-current="page"{% endif %} href="{{ '/contact.html' | relative_url }}">Contact</a></div>
     <div class="menu-item parent"><a {% if current_url == '/mailinglist.html' %}class="current" aria-current="page"{% endif %} href="{{ '/mailinglist.html' | relative_url }}">E-mailing list</a></div>
   </nav>
 </aside>

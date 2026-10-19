@@ -227,3 +227,21 @@ img { max-width: 100%; height: auto; }
   }
   #layout-menu .submenu a { padding: 0.12em 0.35em; white-space: normal; }
 }
+
+/* Contact page: reveal email only after a deliberate click. */
+.contact-reveal {
+  border-top: 1px solid #ddd;
+  margin-top: 1.8em;
+  padding-top: 1.1em;
+}
+.contact-reveal-button {
+  border: 1px solid #3f68a8;
+  background: #f6f8fb;
+  color: #224b8d;
+  font: inherit;
+  border-radius: 3px;
+  padding: 0.47em 0.75em;
+  cursor: pointer;
+}
+.contact-reveal-button:hover { background: #e8eef7; }
+.contact-email-result { margin-top: 0.85em; }
