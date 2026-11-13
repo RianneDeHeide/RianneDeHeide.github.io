@@ -25,9 +25,27 @@ Science Park 123 <br/>
 <p>I also care strongly about academic culture, supervision and creating an environment in which ambitious research and kindness can coexist. <a href="{{ '/about.html' | relative_url }}">More about me</a>.</p>
 <h2>News</h2>
 <ul>
-{% for item in site.data.news limit:5 %}
-  {% assign news_html = item.html | replace: '__BASEURL__', site.baseurl %}
-  <li><p>{{ news_html }}</p></li>
+{% assign shown = 0 %}
+{% for update in site.data.news_updates %}
+  {% if update.after == 'before' and shown < 5 %}
+    {% assign news_html = update.html | replace: '__BASEURL__', site.baseurl %}
+    <li><p>{{ news_html }}</p></li>
+    {% assign shown = shown | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% for item in site.data.news %}
+  {% if shown < 5 %}
+    {% assign news_html = item.html | replace: '__BASEURL__', site.baseurl %}
+    <li><p>{{ news_html }}</p></li>
+    {% assign shown = shown | plus: 1 %}
+    {% for update in site.data.news_updates %}
+      {% if update.after != 'before' and item.year == update.year and item.html contains update.after and shown < 5 %}
+        {% assign news_html = update.html | replace: '__BASEURL__', site.baseurl %}
+        <li><p>{{ news_html }}</p></li>
+        {% assign shown = shown | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 {% endfor %}
 </ul>
 <p><a href="{{ '/news.html' | relative_url }}">More news</a></p>

@@ -4,6 +4,16 @@ title: "News"
 nav: "news"
 ---
 <h1>News</h1>
+{% assign pinned_news = site.data.news_updates | where: 'after', 'before' %}
+{% if pinned_news.size > 0 %}
+  <h2>2027</h2>
+  <ul>
+  {% for update in pinned_news %}
+    {% assign news_html = update.html | replace: '__BASEURL__', site.baseurl %}
+    <li><p>{{ news_html }}</p></li>
+  {% endfor %}
+  </ul>
+{% endif %}
 {% assign news_years = site.data.news | map: 'year' | uniq %}
 {% for year in news_years %}
 <h2>{{ year }}</h2>
@@ -12,6 +22,12 @@ nav: "news"
     {% if item.year == year %}
       {% assign news_html = item.html | replace: '__BASEURL__', site.baseurl %}
       <li><p>{{ news_html }}</p></li>
+      {% for update in site.data.news_updates %}
+        {% if update.after != 'before' and update.year == year and item.html contains update.after %}
+          {% assign news_html = update.html | replace: '__BASEURL__', site.baseurl %}
+          <li><p>{{ news_html }}</p></li>
+        {% endif %}
+      {% endfor %}
     {% endif %}
   {% endfor %}
 </ul>

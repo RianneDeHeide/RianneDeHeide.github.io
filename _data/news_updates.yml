@@ -1,0 +1,15 @@
+# Additional news entries for the website.
+# The original _data/news.yml remains unchanged (including its complete archive).
+# 'after: before' pins an announcement to the top; otherwise, 'after' is a
+# distinctive phrase in an existing entry after which the update is displayed.
+- year: 2027
+  after: before
+  html: '1 April–1 September 2027: I will be on maternity leave.'
+- year: 2026
+  after: 2 December
+  html: '30 November: My MSc student Nynke Luijten will defend her Master’s thesis on e-value alternatives to Simon’s two-stage design. The thesis is available here: <a href="https://purl.utwente.nl/essays/112025"
+    target="_blank" rel="noopener">Read the thesis</a>.'
+- year: 2026
+  after: 16 November
+  html: '20 October: We advertised a full-time, two-year <a href="https://en.academicpositions.se/ad/university-of-twente/2026/lecturer-statistics/254275" target="_blank" rel="noopener">Lecturer in Statistics</a>
+    position in our Statistics group at the University of Twente. Applications closed on 9 November.'
